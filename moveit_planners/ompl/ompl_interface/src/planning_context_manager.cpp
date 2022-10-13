@@ -44,7 +44,13 @@
 #include <ompl/geometric/planners/rrt/pRRT.h>
 #include <ompl/geometric/planners/rrt/RRTConnect.h>
 #include <ompl/geometric/planners/rrt/TRRT.h>
+#include <ompl/geometric/planners/rrt/TSRRT.h>
+#include <ompl/geometric/planners/rrt/SORRTstar.h>
+#include <ompl/geometric/planners/rrt/InformedRRTstar.h>
 #include <ompl/geometric/planners/rrt/LazyRRT.h>
+#include <ompl/geometric/planners/informedtrees/ABITstar.h>
+#include <ompl/geometric/planners/informedtrees/AITstar.h>
+#include <ompl/geometric/planners/informedtrees/BITstar.h>
 #include <ompl/geometric/planners/est/EST.h>
 #include <ompl/geometric/planners/sbl/SBL.h>
 #include <ompl/geometric/planners/sbl/pSBL.h>
@@ -290,6 +296,11 @@ void ompl_interface::PlanningContextManager::registerDefaultPlanners()
   registerPlannerAllocatorHelper<og::SPARStwo>("geometric::SPARStwo");
   registerPlannerAllocatorHelper<og::STRIDE>("geometric::STRIDE");
   registerPlannerAllocatorHelper<og::TRRT>("geometric::TRRT");
+  registerPlannerAllocatorHelper<og::InformedRRTstar>("geometric::InformedRRTstar");
+  registerPlannerAllocatorHelper<og::SORRTstar>("geometric::SORRTstar");
+  registerPlannerAllocatorHelper<og::BITstar>("geometric::BITstar");
+  registerPlannerAllocatorHelper<og::AITstar>("geometric::AITstar");
+  registerPlannerAllocatorHelper<og::ABITstar>("geometric::ABITstar");
 }
 
 void ompl_interface::PlanningContextManager::registerDefaultStateSpaces()
